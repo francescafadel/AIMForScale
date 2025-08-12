@@ -1,18 +1,20 @@
-# PDF Keyword Scanner
+# World Bank PDF Keyword Scanner
 
-This script reads a PDF file containing "Project Name" and "Project Description" columns, scans them for specific keywords, and creates two new columns with the found keywords.
+This script reads a PDF file containing World Bank project data, scans for livestock-related keywords across multiple columns, and creates comprehensive keyword analysis with rock-solid accuracy and alignment.
 
 ## Features
 
-- Reads PDF files and extracts table data
-- Performs case-sensitive keyword matching
-- Creates two new columns: "Keywords Found in Project Name" and "Keywords Found in Project Description"
-- Saves results to a CSV file
-- Provides summary statistics
+- **Rock-solid PDF extraction** with proper multi-line cell handling
+- **Case-insensitive keyword matching** with Unicode normalization
+- **Three-column search**: Project Name, Project Description, and Implementing Agency
+- **Duplicate elimination** and perfect row alignment
+- **Comprehensive output** with union column showing all keywords found
+- **Debug functionality** to verify detection accuracy
+- **Robust error handling** and validation
 
 ## Keywords
 
-The script searches for the following livestock-related keywords:
+The script searches for 41 livestock-related keywords:
 - animal, beef, butter, cheese, cream, dairy
 - deforestation, disease, drought
 - egg, eggs, efficiency, export
@@ -44,30 +46,41 @@ pip install -r requirements.txt
 ## Usage
 
 1. Place your PDF file in the same directory as the script
-2. Run the script with your PDF file as an argument:
+2. Run the improved script:
 
 ```bash
-python pdf_keyword_scanner.py your_file.pdf
+python3 pdf_keyword_scanner_improved.py "your_file.pdf"
 ```
 
 ## Output
 
 The script will:
-1. Extract tables from the PDF
-2. Find the table with "Project Name" and "Project Description" columns
-3. Scan both columns for keywords
-4. Create a new CSV file with the original data plus two new columns:
+1. Extract all columns from the PDF table
+2. Search for keywords in Project Name, Project Description, and Implementing Agency
+3. Create a CSV file with original data plus keyword columns:
    - "Keywords Found in Project Name"
-   - "Keywords Found in Project Description"
-5. Display summary statistics
+   - "Keywords Found in Project Description" 
+   - "Keywords Found in Implementing Agency"
+   - "Keywords Found (Any Column)" - union of all three
+4. Display comprehensive summary statistics
+5. Provide debug output for verification
+
+## Key Improvements
+
+- **Perfect alignment**: No duplicate rows, consistent column structure
+- **Multi-line handling**: Properly merges cells with line breaks
+- **Unicode robust**: Handles special characters and non-breaking spaces
+- **Semantic column matching**: Finds columns regardless of exact header formatting
+- **Validation**: Checks Project ID presence and data integrity
 
 ## Example
 
-If your input file is `projects.pdf`, the output will be saved as `projects_with_keywords.csv`.
+If your input file is `Final World Bank Corpus - Sheet1.pdf`, the output will be saved as `Final World Bank Corpus - Sheet1_with_keywords_improved.csv`.
 
-## Notes
+## Files
 
-- Keyword matching is case-sensitive
-- Only whole words are matched (not partial matches)
-- If no keywords are found, the column will contain an empty list
-- The script will show available columns if the required columns are not found 
+- `pdf_keyword_scanner_improved.py` - Main script with all improvements
+- `keywords.txt` - 41 livestock-related keywords
+- `requirements.txt` - Python dependencies
+- `setup_guide.md` - Quick setup instructions
+- `test_keyword_matching.py` - Test script for verification
