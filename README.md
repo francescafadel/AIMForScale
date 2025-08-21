@@ -20,46 +20,22 @@ This script reads a PDF file containing World Bank project data, scans for lives
 The script searches for 150+ comprehensive livestock-related keywords including:
 
 **Core Livestock Terms:**
-- animal, animals, livestock, cattle, dairy, beef, poultry, sheep, goats, pigs, swine
-- cow, cows, bull, bulls, calf, calves, heifer, heifers, steer, steers
-- chicken, chickens, hen, hens, rooster, roosters, turkey, turkeys, duck, ducks, goose, geese
-- goat, goats, kid, kids, ewe, ewes, ram, rams, lamb, lambs
-- pig, pigs, boar, boars, sow, sows, piglet, piglets
-- horse, horses, mare, mares, stallion, stallions, foal, foals
-- donkey, donkeys, mule, mules, ass, asses
-- camel, camels, llama, llamas, alpaca, alpacas, buffalo, buffalos
+animal, animals, livestock, cattle, dairy, beef, poultry, sheep, goats, pigs, swine, cow, cows, bull, bulls, calf, calves, heifer, heifers, steer, steers, chicken, chickens, hen, hens, rooster, roosters, turkey, turkeys, duck, ducks, goose, geese, goat, goats, kid, kids, ewe, ewes, ram, rams, lamb, lambs, pig, pigs, boar, boars, sow, sows, piglet, piglets, horse, horses, mare, mares, stallion, stallions, foal, foals, donkey, donkeys, mule, mules, ass, asses, camel, camels, llama, llamas, alpaca, alpacas, buffalo, buffalos
 
 **Livestock Products:**
-- milk, dairy, cheese, butter, cream, yogurt
-- meat, beef, pork, mutton, lamb, goat meat
-- egg, eggs, leather, wool, manure
+milk, dairy, cheese, butter, cream, yogurt, meat, beef, pork, mutton, lamb, goat meat, egg, eggs, leather, wool, manure
 
 **Livestock Management:**
-- herd, herd health, herd management, flock, flock management
-- breeding, selective breeding, crossbreeding, genetics, genetic
-- animal health, animal husbandry, veterinary, vet
-- feed, feed additives, feed conversion ratio, feed efficiency, fodder, forage
-- grazing, grazing land, pasture, pasture degradation, rangeland
-- biosecurity, disease surveillance, vaccination, immunization, deworming
-- parasite control, mastitis, Newcastle disease, African swine fever
+herd, herd health, herd management, flock, flock management, breeding, selective breeding, crossbreeding, genetics, genetic, animal health, animal husbandry, veterinary, vet, feed, feed additives, feed conversion ratio, feed efficiency, fodder, forage, grazing, grazing land, pasture, pasture degradation, rangeland, biosecurity, disease surveillance, vaccination, immunization, deworming, parasite control, mastitis, Newcastle disease, African swine fever
 
 **Agricultural Systems:**
-- smallholder, smallholders, farming, mixed farming
-- climate smart livestock, climate-smart livestock
-- sustainable intensification, regenerative agriculture
-- silvopastoral, community based breeding
-- women in livestock, gender roles
+smallholder, smallholders, farming, mixed farming, climate smart livestock, climate-smart livestock, sustainable intensification, regenerative agriculture, silvopastoral, community based breeding, women in livestock, gender roles
 
 **Value Chain & Markets:**
-- value chain, market access, commercialization, processing
-- productivity, production system, output, yield
-- livelihoods, household income, cooperative, association
-- extension agent, extension services, farmer training
+value chain, market access, commercialization, processing, productivity, production system, output, yield, livelihoods, household income, cooperative, association, extension agent, extension services, farmer training
 
 **Environmental & Health:**
-- zoonosis, zoonotic, waste management, manure management
-- GHG emissions, greenhouse gas, methane, overgrazing
-- deforestation, water buffalo, water buffalo
+zoonosis, zoonotic, waste management, manure management, GHG emissions, greenhouse gas, methane, overgrazing, deforestation, water buffalo
 
 **And many more specialized terms...**
 
