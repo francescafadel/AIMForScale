@@ -4,32 +4,64 @@ This script reads a PDF file containing World Bank project data, scans for lives
 
 ## Features
 
-- **Rock-solid PDF extraction** with proper multi-line cell handling
-- **Case-insensitive keyword matching** with Unicode normalization
-- **Three-column search**: Project Name, Project Description, and Implementing Agency
-- **Duplicate elimination** and perfect row alignment
+- **Enhanced PDF extraction** with proper multi-line cell handling
+- **Robust keyword matching** with case-insensitive, accent-normalized, separator-tolerant detection
+- **Multi-column search**: Project Name, Project Description, Implementing Agency, and Abstract
+- **CSV processing capability** for existing CSV files
+- **150+ comprehensive livestock keywords** covering all aspects of livestock development
+- **Perfect alignment** with duplicate elimination and validation
 - **Comprehensive output** with union column showing all keywords found
 - **Debug functionality** to verify detection accuracy
+- **Test suite** for validating keyword detection robustness
 - **Robust error handling** and validation
 
 ## Keywords
 
-The script searches for 41 livestock-related keywords:
-- animal, beef, butter, cheese, cream, dairy
-- deforestation, disease, drought
-- egg, eggs, efficiency, export
-- feed, flock, fodder, forage
-- genetics, goat, grains, grazing
-- health, herd, import
-- lamb, livestock
-- manure, market, meat, milk, mutton
-- pasture, pork, poultry, protein
-- resilience
-- supplements
-- vet
-- waste
-- yogurt
-- zoonotic
+The script searches for 150+ comprehensive livestock-related keywords including:
+
+**Core Livestock Terms:**
+- animal, animals, livestock, cattle, dairy, beef, poultry, sheep, goats, pigs, swine
+- cow, cows, bull, bulls, calf, calves, heifer, heifers, steer, steers
+- chicken, chickens, hen, hens, rooster, roosters, turkey, turkeys, duck, ducks, goose, geese
+- goat, goats, kid, kids, ewe, ewes, ram, rams, lamb, lambs
+- pig, pigs, boar, boars, sow, sows, piglet, piglets
+- horse, horses, mare, mares, stallion, stallions, foal, foals
+- donkey, donkeys, mule, mules, ass, asses
+- camel, camels, llama, llamas, alpaca, alpacas, buffalo, buffalos
+
+**Livestock Products:**
+- milk, dairy, cheese, butter, cream, yogurt
+- meat, beef, pork, mutton, lamb, goat meat
+- egg, eggs, leather, wool, manure
+
+**Livestock Management:**
+- herd, herd health, herd management, flock, flock management
+- breeding, selective breeding, crossbreeding, genetics, genetic
+- animal health, animal husbandry, veterinary, vet
+- feed, feed additives, feed conversion ratio, feed efficiency, fodder, forage
+- grazing, grazing land, pasture, pasture degradation, rangeland
+- biosecurity, disease surveillance, vaccination, immunization, deworming
+- parasite control, mastitis, Newcastle disease, African swine fever
+
+**Agricultural Systems:**
+- smallholder, smallholders, farming, mixed farming
+- climate smart livestock, climate-smart livestock
+- sustainable intensification, regenerative agriculture
+- silvopastoral, community based breeding
+- women in livestock, gender roles
+
+**Value Chain & Markets:**
+- value chain, market access, commercialization, processing
+- productivity, production system, output, yield
+- livelihoods, household income, cooperative, association
+- extension agent, extension services, farmer training
+
+**Environmental & Health:**
+- zoonosis, zoonotic, waste management, manure management
+- GHG emissions, greenhouse gas, methane, overgrazing
+- deforestation, water buffalo, water buffalo
+
+**And many more specialized terms...**
 
 ## Installation
 
@@ -45,11 +77,24 @@ pip install -r requirements.txt
 
 ## Usage
 
+### For PDF Files:
 1. Place your PDF file in the same directory as the script
 2. Run the improved script:
 
 ```bash
 python3 pdf_keyword_scanner_improved.py "your_file.pdf"
+```
+
+### For CSV Files:
+1. Place your CSV file in the same directory as the script
+2. Run the CSV scanner:
+
+```bash
+# Process all columns
+python3 csv_keyword_scanner.py "your_file.csv"
+
+# Process specific columns only
+python3 csv_keyword_scanner.py "your_file.csv" "Project Name" "Description" "Agency"
 ```
 
 ## Output
@@ -79,8 +124,11 @@ If your input file is `Final World Bank Corpus - Sheet1.pdf`, the output will be
 
 ## Files
 
-- `pdf_keyword_scanner_improved.py` - Main script with all improvements
-- `keywords.txt` - 41 livestock-related keywords
+- `pdf_keyword_scanner_improved.py` - Enhanced PDF processing script
+- `csv_keyword_scanner.py` - CSV file processing script
+- `keywords.txt` - 150+ comprehensive livestock-related keywords
+- `test_keyword_robustness.py` - Comprehensive test suite for keyword validation
 - `requirements.txt` - Python dependencies
 - `setup_guide.md` - Quick setup instructions
-- `test_keyword_matching.py` - Test script for verification
+- `new_ifi_scanner.py` - Alternative scanner for other IFIs
+- `new_ifi_keywords.txt` - Keywords for other IFIs
