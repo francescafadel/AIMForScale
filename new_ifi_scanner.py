@@ -603,16 +603,6 @@ def normalize_text(text: str) -> str:
     # Remove HTML <br> tags
     text_str = re.sub(r'<br\s*/?>', ' ', text_str, flags=re.IGNORECASE)
     
-    # Remove accents by decomposing and keeping only base characters
-    text_str = ''.join(
-        char for char in unicodedata.normalize('NFD', text_str)
-        if not unicodedata.combining(char)
-    )
-    
-    # Normalize separators (underscores, slashes) to spaces
-    text_str = text_str.replace('_', ' ')
-    text_str = text_str.replace('/', ' ')
-    
     # Collapse whitespace
     text_str = re.sub(r'\s+', ' ', text_str)
     
@@ -624,7 +614,7 @@ def normalize_text(text: str) -> str:
 def compile_keyword_patterns(keywords: List[str]) -> Dict[str, re.Pattern]:
     """
     Compile regex patterns for each keyword to handle PDF formatting issues.
-    Enhanced to handle various separators and multi-word keywords.
+    Allows optional spaces/dashes between letters.
     
     Args:
         keywords (List[str]): List of keywords
@@ -638,32 +628,25 @@ def compile_keyword_patterns(keywords: List[str]) -> Dict[str, re.Pattern]:
         # Normalize the keyword
         normalized_keyword = normalize_text(keyword)
         
-        # Enhanced pattern for better separator handling
-        if ' ' in normalized_keyword:  # Multi-word keyword
-            # Handle various separators between words
-            words = normalized_keyword.split()
-            pattern_parts = []
-            for word in words:
-                # Allow underscores within words as well as between words
-                word_pattern = re.escape(word).replace('\\_', '[\\s\\-_/]*')
-                pattern_parts.append(r'\b' + word_pattern + r'\b')
-            # Allow various separators between words (including underscores)
-            pattern_str = r'[\s\-_/]+'.join(pattern_parts)
-        else:  # Single word keyword
-            # Allow optional separators within the word
-            pattern_parts = []
-            for char in normalized_keyword:
-                if char.isalnum():
-                    pattern_parts.append(f"{re.escape(char)}[\\s\\u00A0\\-_/]*")
-                else:
-                    pattern_parts.append(re.escape(char))
-            pattern_str = r'\b' + ''.join(pattern_parts) + r'\b'
+        # Create pattern that allows optional spaces/dashes between letters
+        # Also accept hyphen or en/em dash between tokens: [\s\u00A0\-–—]*
+        pattern_parts = []
+        for char in normalized_keyword:
+            if char.isalnum():
+                # Allow optional spaces/dashes around each character
+                pattern_parts.append(f"{re.escape(char)}[\\s\\u00A0\\-–—]*")
+            else:
+                # For non-alphanumeric characters, just escape them
+                pattern_parts.append(re.escape(char))
+        
+        # Join the pattern parts and add word boundaries
+        pattern_str = r'\b' + ''.join(pattern_parts) + r'\b'
         
         try:
-            patterns[keyword] = re.compile(pattern_str, re.IGNORECASE | re.UNICODE)
+            patterns[keyword] = re.compile(pattern_str, re.IGNORECASE)
         except re.error:
             # Fallback to simple pattern if complex pattern fails
-            patterns[keyword] = re.compile(r'\b' + re.escape(normalized_keyword) + r'\b', re.IGNORECASE | re.UNICODE)
+            patterns[keyword] = re.compile(r'\b' + re.escape(normalized_keyword) + r'\b', re.IGNORECASE)
     
     return patterns
 
@@ -871,52 +854,6 @@ def debug_project(df: pd.DataFrame, project_id: str, keyword_patterns: Dict[str,
     print(f"  Keywords in Implementing Agency: {row.get('Keywords Found in Implementing Agency', [])}")
     print(f"  Keywords Found (Any Column): {row.get('Keywords Found (Any Column)', [])}")
     print("=" * 50)
-
-def process_csv_keywords(csv_path: str, keywords: List[str], text_columns: List[str]) -> pd.DataFrame:
-    """
-    Process existing CSV file and add keyword columns.
-    
-    Args:
-        csv_path (str): Path to the CSV file
-        keywords (List[str]): List of keywords to search for
-        text_columns (List[str]): List of column names to search in
-        
-    Returns:
-        pd.DataFrame: DataFrame with original data and keyword columns
-    """
-    # Load CSV
-    print(f"Loading CSV file: {csv_path}")
-    df = pd.read_csv(csv_path)
-    
-    print(f"Loaded {len(df)} rows with columns: {list(df.columns)}")
-    
-    # Compile keyword patterns
-    keyword_patterns = compile_keyword_patterns(keywords)
-    
-    # Add keyword columns for each text column
-    for col in text_columns:
-        if col in df.columns:
-            print(f"Processing column: {col}")
-            df[f'Keywords Found in {col}'] = df[col].apply(
-                lambda x: find_keywords_in_text(x, keyword_patterns)
-            )
-        else:
-            print(f"Warning: Column '{col}' not found in CSV. Available columns: {list(df.columns)}")
-            df[f'Keywords Found in {col}'] = [[]] * len(df)
-    
-    # Add union column
-    keyword_cols = [f'Keywords Found in {col}' for col in text_columns if col in df.columns]
-    if keyword_cols:
-        print(f"Creating union column from: {keyword_cols}")
-        df['Keywords Found (Any Column)'] = df.apply(
-            lambda row: sorted(list(set(
-                [kw for col in keyword_cols for kw in row[col]]
-            ))), axis=1
-        )
-    else:
-        df['Keywords Found (Any Column)'] = [[]] * len(df)
-    
-    return df
 
 def main():
     """

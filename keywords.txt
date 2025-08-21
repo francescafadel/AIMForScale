@@ -1,41 +1,150 @@
-animal
+African swine fever
+alpaca
+alpacas
+animal health
+animal husbandry
+ass
+asses
+association
 beef
-butter
-cheese
-cream
+beef cattle
+biosecurity
+boar
+boars
+breeding
+buffalo
+buffalos
+bull
+bulls
+butchery
+calf
+calves
+camel
+camels
+caprine
+cattle
+chicken
+chickens
+climate smart livestock
+climate-smart livestock
+commercialization
+community based breeding
+cooperative
+cow
+cows
+crossbreeding
 dairy
-deforestation
-disease
-drought
+dairy cattle
+deworming
+disease surveillance
+donkey
+donkeys
+draft power
+duck
+ducks
 egg
 eggs
-efficiency
-export
+ewe
+ewes
+extension agent
+extension services
+farm management
+farmer training
+farming
 feed
-flock
+feed additives
+feed conversion ratio
+feed efficiency
+flock management
 fodder
 forage
+geese
+gender roles
+genetic
 genetics
+GHG emissions
 goat
-grains
+goat meat
+goats
+goose
+grant
 grazing
-health
-herd
-import
+grazing land
+greenhouse gas
+hay
+hen
+hens
+herd health
+herd management
+herding
+horse
+horses
+household income
+immunization
+industrial
+kid
+kids
 lamb
+lambs
+leather
+livelihoods
+llama
+llamas
 livestock
 manure
-market
+manure management
+market access
+mastitis
 meat
+methane
 milk
+mixed farming
+mule
+mules
 mutton
+Newcastle disease
+output
+overgrazing
+parasite control
 pasture
+pasture degradation
+pig
+pigs
+policy
 pork
 poultry
-protein
-resilience
+processing
+production system
+productivity
+ram
+ranch
+rangeland
+regenerative agriculture
+rooster
+roosters
+ruminant
+ruminant nutrition
+selective breeding
+sheep
+silvopastoral
+slaughterhouse
+smallholder
+stallion
+stallions
+subsidy
 supplements
+sustainable intensification
+swine
+turkey
+turkeys
+vaccination
+value chain
 vet
-waste
-yogurt
+veterinary
+waste management
+water buffalo
+women in livestock
+wool
+yield
+zoonosis
 zoonotic 
