@@ -1,6 +1,6 @@
-# World Bank PDF Keyword Scanner
+# Key Word Search
 
-This script reads a PDF file containing World Bank project data, scans for livestock-related keywords across multiple columns, and creates comprehensive keyword analysis with rock-solid accuracy and alignment.
+A comprehensive Python tool for extracting and analyzing livestock-related keywords from PDF documents and CSV files from various International Financial Institutions (IFIs), including World Bank and African Development Bank (AfDB) projects.
 
 ## Features
 
@@ -100,11 +100,17 @@ If your input file is `Final World Bank Corpus - Sheet1.pdf`, the output will be
 
 ## Files
 
-- `pdf_keyword_scanner_improved.py` - Enhanced PDF processing script
-- `csv_keyword_scanner.py` - CSV file processing script
+- `pdf_keyword_scanner_improved.py` - Enhanced PDF processing script for World Bank data
+- `csv_keyword_scanner.py` - CSV file processing script for any IFI data
 - `keywords.txt` - 150+ comprehensive livestock-related keywords
 - `test_keyword_robustness.py` - Comprehensive test suite for keyword validation
 - `requirements.txt` - Python dependencies
 - `setup_guide.md` - Quick setup instructions
 - `new_ifi_scanner.py` - Alternative scanner for other IFIs
 - `new_ifi_keywords.txt` - Keywords for other IFIs
+
+## Processed Data Files
+
+- `World Bank With Abstracts pt.1_with_keywords.csv` - World Bank projects with keyword analysis
+- `World Bank With Abstracts pt.2_with_keywords.csv` - World Bank projects with keyword analysis  
+- `afdb_full_extraction_with_keywords.csv` - African Development Bank projects with keyword analysis
