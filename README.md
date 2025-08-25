@@ -114,3 +114,4 @@ If your input file is `Final World Bank Corpus - Sheet1.pdf`, the output will be
 - `World Bank With Abstracts pt.1_with_keywords.csv` - World Bank projects with keyword analysis
 - `World Bank With Abstracts pt.2_with_keywords.csv` - World Bank projects with keyword analysis  
 - `afdb_full_extraction_with_keywords.csv` - African Development Bank projects with keyword analysis
+- `Final IDB Corpus   - Sheet1_with_keywords.csv` - Inter-American Development Bank projects with keyword analysis
