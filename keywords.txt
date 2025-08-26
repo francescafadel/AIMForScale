@@ -6,6 +6,8 @@ animal husbandry
 ass
 asses
 association
+average daily gain
+barn
 beef
 beef cattle
 biosecurity
@@ -22,6 +24,7 @@ calves
 camel
 camels
 caprine
+carbon sequestration
 cattle
 chicken
 chickens
@@ -30,9 +33,12 @@ climate-smart livestock
 commercialization
 community based breeding
 cooperative
+cooperative credit
 cow
 cows
+CRISPR
 crossbreeding
+curd
 dairy
 dairy cattle
 deworming
@@ -44,19 +50,28 @@ duck
 ducks
 egg
 eggs
+embryo
+gene editing
+enteric fermentation
 ewe
 ewes
 extension agent
 extension services
+extensive grazing
 farm management
 farmer training
 farming
 feed
 feed additives
+feed conversion efficiency
 feed conversion ratio
 feed efficiency
+feedlot
+fertility
 flock management
 fodder
+food and mouth disease
+foot-and-mouth disease
 forage
 geese
 gender roles
@@ -77,35 +92,44 @@ hens
 herd health
 herd management
 herding
+herdsmen
+herdswomen
 horse
 horses
 household income
 immunization
 industrial
+intensive systems
 kid
 kids
+lactation
 lamb
 lambs
 leather
 livelihoods
+livestock
 llama
 llamas
-livestock
 manure
 manure management
 market access
 mastitis
 meat
 methane
+methane capture
 milk
+microfinance
 mixed farming
 mule
 mules
 mutton
 Newcastle disease
+nutrient cycling
 output
 overgrazing
 parasite control
+pastoral
+pastoralist
 pasture
 pasture degradation
 pig
@@ -119,18 +143,23 @@ productivity
 ram
 ranch
 rangeland
+rational grazing
 regenerative agriculture
+reproduction
 rooster
 roosters
+rotational grazing
 ruminant
 ruminant nutrition
 selective breeding
+semi-intensive systems
 sheep
 silvopastoral
 slaughterhouse
 smallholder
 stallion
 stallions
+stocking density
 subsidy
 supplements
 sustainable intensification
@@ -138,13 +167,18 @@ swine
 turkey
 turkeys
 vaccination
+value-added processing
 value chain
 vet
 veterinary
 waste management
 water buffalo
+weaning
+whey
 women in livestock
 wool
 yield
+zero grazing
+zero-grazing
 zoonosis
 zoonotic 

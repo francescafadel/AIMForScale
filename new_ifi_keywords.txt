@@ -1,41 +1,184 @@
-animal
+African swine fever
+alpaca
+alpacas
+animal health
+animal husbandry
+ass
+asses
+association
+average daily gain
+barn
 beef
-butter
-cheese
-cream
+beef cattle
+biosecurity
+boar
+boars
+breeding
+buffalo
+buffalos
+bull
+bulls
+butchery
+calf
+calves
+camel
+camels
+caprine
+carbon sequestration
+cattle
+chicken
+chickens
+climate smart livestock
+climate-smart livestock
+commercialization
+community based breeding
+cooperative
+cooperative credit
+cow
+cows
+CRISPR
+crossbreeding
+curd
 dairy
-deforestation
-disease
-drought
+dairy cattle
+deworming
+disease surveillance
+donkey
+donkeys
+draft power
+duck
+ducks
 egg
 eggs
-efficiency
-export
+embryo
+gene editing
+enteric fermentation
+ewe
+ewes
+extension agent
+extension services
+extensive grazing
+farm management
+farmer training
+farming
 feed
-flock
+feed additives
+feed conversion efficiency
+feed conversion ratio
+feed efficiency
+feedlot
+fertility
+flock management
 fodder
+food and mouth disease
+foot-and-mouth disease
 forage
+geese
+gender roles
+genetic
 genetics
+GHG emissions
 goat
-grains
+goat meat
+goats
+goose
+grant
 grazing
-health
-herd
-import
+grazing land
+greenhouse gas
+hay
+hen
+hens
+herd health
+herd management
+herding
+herdsmen
+herdswomen
+horse
+horses
+household income
+immunization
+industrial
+intensive systems
+kid
+kids
+lactation
 lamb
+lambs
+leather
+livelihoods
 livestock
+llama
+llamas
 manure
-market
+manure management
+market access
+mastitis
 meat
+methane
+methane capture
 milk
+microfinance
+mixed farming
+mule
+mules
 mutton
+Newcastle disease
+nutrient cycling
+output
+overgrazing
+parasite control
+pastoral
+pastoralist
 pasture
+pasture degradation
+pig
+pigs
+policy
 pork
 poultry
-protein
-resilience
+processing
+production system
+productivity
+ram
+ranch
+rangeland
+rational grazing
+regenerative agriculture
+reproduction
+rooster
+roosters
+rotational grazing
+ruminant
+ruminant nutrition
+selective breeding
+semi-intensive systems
+sheep
+silvopastoral
+slaughterhouse
+smallholder
+stallion
+stallions
+stocking density
+subsidy
 supplements
+sustainable intensification
+swine
+turkey
+turkeys
+vaccination
+value-added processing
+value chain
 vet
-waste
-yogurt
+veterinary
+waste management
+water buffalo
+weaning
+whey
+women in livestock
+wool
+yield
+zero grazing
+zero-grazing
+zoonosis
 zoonotic 

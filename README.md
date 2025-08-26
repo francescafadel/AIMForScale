@@ -20,24 +20,7 @@ A comprehensive Python tool for extracting and analyzing livestock-related keywo
 The script searches for 150+ comprehensive livestock-related keywords including:
 
 **Core Livestock Terms:**
-animal, animals, livestock, cattle, dairy, beef, poultry, sheep, goats, pigs, swine, cow, cows, bull, bulls, calf, calves, heifer, heifers, steer, steers, chicken, chickens, hen, hens, rooster, roosters, turkey, turkeys, duck, ducks, goose, geese, goat, goats, kid, kids, ewe, ewes, ram, rams, lamb, lambs, pig, pigs, boar, boars, sow, sows, piglet, piglets, horse, horses, mare, mares, stallion, stallions, foal, foals, donkey, donkeys, mule, mules, ass, asses, camel, camels, llama, llamas, alpaca, alpacas, buffalo, buffalos
-
-**Livestock Products:**
-milk, dairy, cheese, butter, cream, yogurt, meat, beef, pork, mutton, lamb, goat meat, egg, eggs, leather, wool, manure
-
-**Livestock Management:**
-herd, herd health, herd management, flock, flock management, breeding, selective breeding, crossbreeding, genetics, genetic, animal health, animal husbandry, veterinary, vet, feed, feed additives, feed conversion ratio, feed efficiency, fodder, forage, grazing, grazing land, pasture, pasture degradation, rangeland, biosecurity, disease surveillance, vaccination, immunization, deworming, parasite control, mastitis, Newcastle disease, African swine fever
-
-**Agricultural Systems:**
-smallholder, smallholders, farming, mixed farming, climate smart livestock, climate-smart livestock, sustainable intensification, regenerative agriculture, silvopastoral, community based breeding, women in livestock, gender roles
-
-**Value Chain & Markets:**
-value chain, market access, commercialization, processing, productivity, production system, output, yield, livelihoods, household income, cooperative, association, extension agent, extension services, farmer training
-
-**Environmental & Health:**
-zoonosis, zoonotic, waste management, manure management, GHG emissions, greenhouse gas, methane, overgrazing, deforestation, water buffalo
-
-**And many more specialized terms...**
+African swine fever, alpaca, alpacas, animal health, animal husbandry, ass, asses, association, average daily gain, barn, beef, beef cattle, biosecurity, boar, boars, breeding, buffalo, buffalos, bull, bulls, butchery, calf, calves, camel, camels, caprine, carbon sequestration, cattle, chicken, chickens, climate smart livestock, climate-smart livestock, commercialization, community based breeding, cooperative, cooperative credit, cow, cows, CRISPR, crossbreeding, curd, dairy, dairy cattle, deworming, disease surveillance, donkey, donkeys, draft power, duck, ducks, egg, eggs, embryo, gene editing, enteric fermentation, ewe, ewes, extension agent, extension services, extensive grazing, farm management, farmer training, farming, feed, feed additives, feed conversion efficiency, feed conversion ratio, feed efficiency, feedlot, fertility, flock management, fodder, food and mouth disease, foot-and-mouth disease, forage, geese, gender roles, genetic, genetics, GHG emissions, goat, goat meat, goats, goose, grant, grazing, grazing land, greenhouse gas, hay, hen, hens, herd health, herd management, herding, herdsmen, herdswomen, horse, horses, household income, immunization, industrial, intensive systems, kid, kids, lactation, lamb, lambs, leather, livelihoods, livestock, llama, llamas, manure, manure management, market access, mastitis, meat, methane, methane capture, milk, microfinance, mixed farming, mule, mules, mutton, Newcastle disease, nutrient cycling, output, overgrazing, parasite control, pastoral, pastoralist, pasture, pasture degradation, pig, pigs, policy, pork, poultry, processing, production system, productivity, ram, ranch, rangeland, rational grazing, regenerative agriculture, reproduction, rooster, roosters, rotational grazing, ruminant, ruminant nutrition, selective breeding, semi-intensive systems, sheep, silvopastoral, slaughterhouse, smallholder, stallion, stallions, stocking density, subsidy, supplements, sustainable intensification, swine, turkey, turkeys, vaccination, value-added processing, value chain, vet, veterinary, waste management, water buffalo, weaning, whey, women in livestock, wool, yield, zero grazing, zero-grazing, zoonosis, zoonotic
 
 ## Installation
 
