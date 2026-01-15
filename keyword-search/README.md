@@ -18,7 +18,7 @@ A comprehensive Python tool for extracting and analyzing livestock-related keywo
 ## Repository Structure
 
 ```
-World Bank/
+keyword-search/
 ├── data/
 │   ├── input/          # Original CSV files
 │   ├── processed/      # Intermediate files with keywords
@@ -26,7 +26,10 @@ World Bank/
 ├── scripts/            # Python processing scripts
 ├── config/             # Configuration files (keywords)
 ├── updated/            # Latest updated keyword list
-└── archive/            # Old/duplicate files
+├── archive/            # Old/duplicate files
+├── README.md           # This file
+├── requirements.txt    # Python dependencies
+└── setup_guide.md      # Setup instructions
 ```
 
 ## Keywords
@@ -51,8 +54,9 @@ pip install -r requirements.txt
 ## Usage
 
 ### For CSV Files:
-1. Place your CSV file in the `data/input/` directory
-2. Run the CSV scanner:
+1. Navigate to the `keyword-search/` directory
+2. Place your CSV file in the `data/input/` directory
+3. Run the CSV scanner:
 
 ```bash
 # Process all columns
