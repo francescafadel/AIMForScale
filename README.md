@@ -76,9 +76,28 @@ The script will:
 
 ## Final Cleaned Corpora
 
-- `data/output/Final IDB Cleaned Corpus.csv` - 110 IDB projects with livestock keywords
-- `data/output/Final World Bank Cleaned Corpus.csv` - 203 World Bank projects with livestock keywords
-- `data/output/Final AfDB Cleaned Corpus.csv` - 430 AfDB projects with livestock keywords
+The following cleaned corpora contain only projects with livestock-related keyword matches, with empty keyword columns removed:
+
+### Inter-American Development Bank (IDB)
+- **File:** `data/output/Final IDB Cleaned Corpus.csv`
+- **Before processing:** 567 rows, 26 columns
+- **After keyword search:** 567 rows, 53 columns (added keyword columns)
+- **After cleaning:** 110 rows, 30 columns
+- **Removed:** 457 rows (no keyword matches), 23 empty keyword columns
+
+### World Bank
+- **File:** `data/output/Final World Bank Cleaned Corpus.csv`
+- **Before processing:** 569 rows, 30 columns
+- **After keyword search:** 569 rows, 61 columns (added keyword columns)
+- **After cleaning:** 203 rows, 37 columns
+- **Removed:** 366 rows (no keyword matches), 24 empty keyword columns
+
+### African Development Bank (AfDB)
+- **File:** `data/output/Final AfDB Cleaned Corpus.csv`
+- **Before processing:** 1,109 rows, 7 columns
+- **After keyword search:** 1,109 rows, 15 columns (added keyword columns)
+- **After cleaning:** 430 rows, 11 columns
+- **Removed:** 679 rows (no keyword matches), 4 empty keyword columns
 
 ## Files
 
