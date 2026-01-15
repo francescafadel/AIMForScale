@@ -1,6 +1,6 @@
-# Key Word Search
+# AIMForScale
 
-A comprehensive Python tool for extracting and analyzing livestock-related keywords from PDF documents and CSV files from various International Financial Institutions (IFIs), including World Bank and African Development Bank (AfDB) projects.
+A comprehensive Python tool for extracting and analyzing livestock-related keywords from PDF documents and CSV files from various International Financial Institutions (IFIs), including World Bank, African Development Bank (AfDB), and Inter-American Development Bank (IDB) projects.
 
 ## Features
 
@@ -8,19 +8,38 @@ A comprehensive Python tool for extracting and analyzing livestock-related keywo
 - **Robust keyword matching** with case-insensitive, accent-normalized, separator-tolerant detection
 - **Multi-column search**: Project Name, Project Description, Implementing Agency, and Abstract
 - **CSV processing capability** for existing CSV files
-- **150+ comprehensive livestock keywords** covering all aspects of livestock development
+- **189 specialized livestock keywords** covering technical and modern livestock development terms
 - **Perfect alignment** with duplicate elimination and validation
 - **Comprehensive output** with union column showing all keywords found
 - **Debug functionality** to verify detection accuracy
 - **Test suite** for validating keyword detection robustness
 - **Robust error handling** and validation
 
+## Repository Structure
+
+```
+World Bank/
+├── data/
+│   ├── input/          # Original CSV files
+│   ├── processed/      # Intermediate files with keywords
+│   └── output/         # Final cleaned corpora
+├── scripts/            # Python processing scripts
+├── config/             # Configuration files (keywords)
+├── updated/            # Latest updated keyword list
+└── archive/            # Old/duplicate files
+```
+
 ## Keywords
 
-The script searches for 150+ comprehensive livestock-related keywords including:
+The script searches for 189 specialized livestock-related keywords including technical terms like:
+- Animal management: anthelmintics, artificial insemination, castration, dehorning, embryo transfer
+- Infrastructure: biogas digester, cattle crush, chute, corral, dip tank
+- Genetics: cloning, CRISPR, genomic selection, genetic improvement
+- Feed & nutrition: aquafeed, haylage, silage, total mixed ration, prebiotics, probiotics
+- Modern practices: precision livestock farming, in-vitro fertilization
+- And many more specialized livestock development terms
 
-**Core Livestock Terms:**
-African swine fever, alpaca, alpacas, animal health, animal husbandry, ass, asses, association, average daily gain, barn, beef, beef cattle, biosecurity, boar, boars, breeding, buffalo, buffalos, bull, bulls, butchery, calf, calves, camel, camels, caprine, carbon sequestration, cattle, chicken, chickens, climate smart livestock, climate-smart livestock, commercialization, community based breeding, cooperative, cooperative credit, cow, cows, CRISPR, crossbreeding, curd, dairy, dairy cattle, deworming, disease surveillance, donkey, donkeys, draft power, duck, ducks, egg, eggs, embryo, gene editing, enteric fermentation, ewe, ewes, extension agent, extension services, extensive grazing, farm management, farmer training, farming, feed, feed additives, feed conversion efficiency, feed conversion ratio, feed efficiency, feedlot, fertility, flock management, fodder, food and mouth disease, foot-and-mouth disease, forage, geese, gender roles, genetic, genetics, GHG emissions, goat, goat meat, goats, goose, grant, grazing, grazing land, greenhouse gas, hay, hen, hens, herd health, herd management, herding, herdsmen, herdswomen, horse, horses, household income, immunization, industrial, intensive systems, kid, kids, lactation, lamb, lambs, leather, livelihoods, livestock, llama, llamas, manure, manure management, market access, mastitis, meat, methane, methane capture, milk, microfinance, mixed farming, mule, mules, mutton, Newcastle disease, nutrient cycling, output, overgrazing, parasite control, pastoral, pastoralist, pasture, pasture degradation, pig, pigs, policy, pork, poultry, processing, production system, productivity, ram, ranch, rangeland, rational grazing, regenerative agriculture, reproduction, rooster, roosters, rotational grazing, ruminant, ruminant nutrition, selective breeding, semi-intensive systems, sheep, silvopastoral, slaughterhouse, smallholder, stallion, stallions, stocking density, subsidy, supplements, sustainable intensification, swine, turkey, turkeys, vaccination, value-added processing, value chain, vet, veterinary, waste management, water buffalo, weaning, whey, women in livestock, wool, yield, zero grazing, zero-grazing, zoonosis, zoonotic
+See `updated/keywords.txt` for the complete list.
 
 ## Installation
 
@@ -29,72 +48,43 @@ African swine fever, alpaca, alpacas, animal health, animal husbandry, ass, asse
 pip install -r requirements.txt
 ```
 
-2. Make sure you have Java installed (required for tabula-py):
-   - On macOS: `brew install java`
-   - On Ubuntu: `sudo apt-get install default-jre`
-   - On Windows: Download from Oracle's website
-
 ## Usage
 
-### For PDF Files:
-1. Place your PDF file in the same directory as the script
-2. Run the improved script:
-
-```bash
-python3 pdf_keyword_scanner_improved.py "your_file.pdf"
-```
-
 ### For CSV Files:
-1. Place your CSV file in the same directory as the script
+1. Place your CSV file in the `data/input/` directory
 2. Run the CSV scanner:
 
 ```bash
 # Process all columns
-python3 csv_keyword_scanner.py "your_file.csv"
+python3 scripts/csv_keyword_scanner.py "data/input/your_file.csv"
 
 # Process specific columns only
-python3 csv_keyword_scanner.py "your_file.csv" "Project Name" "Description" "Agency"
+python3 scripts/csv_keyword_scanner.py "data/input/your_file.csv" "Project Name" "Description" "Agency"
 ```
+
+The script automatically uses the updated keyword list from `updated/keywords.txt`.
 
 ## Output
 
 The script will:
-1. Extract all columns from the PDF table
-2. Search for keywords in Project Name, Project Description, and Implementing Agency
-3. Create a CSV file with original data plus keyword columns:
-   - "Keywords Found in Project Name"
-   - "Keywords Found in Project Description" 
-   - "Keywords Found in Implementing Agency"
-   - "Keywords Found (Any Column)" - union of all three
-4. Display comprehensive summary statistics
-5. Provide debug output for verification
+1. Search for keywords in all specified columns (or all columns if none specified)
+2. Create a CSV file with original data plus keyword columns:
+   - "Keywords Found in [Column Name]" for each column searched
+   - "Keywords Found (Any Column)" - union of all matches
+3. Display comprehensive summary statistics
+4. Save results to the same directory as the input file
 
-## Key Improvements
+## Final Cleaned Corpora
 
-- **Perfect alignment**: No duplicate rows, consistent column structure
-- **Multi-line handling**: Properly merges cells with line breaks
-- **Unicode robust**: Handles special characters and non-breaking spaces
-- **Semantic column matching**: Finds columns regardless of exact header formatting
-- **Validation**: Checks Project ID presence and data integrity
-
-## Example
-
-If your input file is `Final World Bank Corpus - Sheet1.pdf`, the output will be saved as `Final World Bank Corpus - Sheet1_with_keywords_improved.csv`.
+- `data/output/Final IDB Cleaned Corpus.csv` - 110 IDB projects with livestock keywords
+- `data/output/Final World Bank Cleaned Corpus.csv` - 203 World Bank projects with livestock keywords
+- `data/output/Final AfDB Cleaned Corpus.csv` - 430 AfDB projects with livestock keywords
 
 ## Files
 
-- `pdf_keyword_scanner_improved.py` - Enhanced PDF processing script for World Bank data
-- `csv_keyword_scanner.py` - CSV file processing script for any IFI data
-- `keywords.txt` - 150+ comprehensive livestock-related keywords
-- `test_keyword_robustness.py` - Comprehensive test suite for keyword validation
+- `scripts/csv_keyword_scanner.py` - Main CSV file processing script
+- `scripts/pdf_keyword_scanner_improved.py` - PDF processing script
+- `updated/keywords.txt` - Latest keyword list (189 keywords)
+- `config/keywords.txt` - Original keyword list (for reference)
 - `requirements.txt` - Python dependencies
 - `setup_guide.md` - Quick setup instructions
-- `new_ifi_scanner.py` - Alternative scanner for other IFIs
-- `new_ifi_keywords.txt` - Keywords for other IFIs
-
-## Processed Data Files
-
-- `World Bank With Abstracts pt.1_with_keywords.csv` - World Bank projects with keyword analysis
-- `World Bank With Abstracts pt.2_with_keywords.csv` - World Bank projects with keyword analysis  
-- `afdb_full_extraction_with_keywords.csv` - African Development Bank projects with keyword analysis
-- `Final IDB Corpus   - Sheet1_with_keywords.csv` - Inter-American Development Bank projects with keyword analysis
