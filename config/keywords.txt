@@ -1,18 +1,26 @@
 African swine fever
 alpaca
 alpacas
+anthelmintics
 animal health
 animal husbandry
+animal nutrition
+animal welfare
+aquafeed
+artificial insemination
 ass
 asses
-association
 average daily gain
-barn
 beef
 beef cattle
+biogas
+biogas digester
 biosecurity
+biosecurity measures
 boar
 boars
+Bos indicus
+Bos taurus
 breeding
 buffalo
 buffalos
@@ -24,16 +32,17 @@ calves
 camel
 camels
 caprine
-carbon sequestration
+castration
 cattle
+cattle crush
 chicken
 chickens
+chute
 climate smart livestock
 climate-smart livestock
-commercialization
-community based breeding
-cooperative
-cooperative credit
+cloning
+coccidiostat
+corral
 cow
 cows
 CRISPR
@@ -41,7 +50,11 @@ crossbreeding
 curd
 dairy
 dairy cattle
+dairy goat
+dehorning
 deworming
+dip tank
+disbudding
 disease surveillance
 donkey
 donkeys
@@ -51,16 +64,12 @@ ducks
 egg
 eggs
 embryo
-gene editing
+embryo transfer
 enteric fermentation
 ewe
 ewes
-extension agent
-extension services
 extensive grazing
 farm management
-farmer training
-farming
 feed
 feed additives
 feed conversion efficiency
@@ -69,24 +78,24 @@ feed efficiency
 feedlot
 fertility
 flock management
-fodder
-food and mouth disease
+foot and mouth disease
 foot-and-mouth disease
 forage
 geese
-gender roles
+gene editing
 genetic
+genetic improvement
 genetics
-GHG emissions
+genomic selection
 goat
 goat meat
 goats
 goose
-grant
 grazing
 grazing land
 greenhouse gas
 hay
+haylage
 hen
 hens
 herd health
@@ -96,9 +105,8 @@ herdsmen
 herdswomen
 horse
 horses
-household income
 immunization
-industrial
+in-vitro fertilization
 intensive systems
 kid
 kids
@@ -106,7 +114,6 @@ lactation
 lamb
 lambs
 leather
-livelihoods
 livestock
 llama
 llamas
@@ -115,36 +122,33 @@ manure management
 market access
 mastitis
 meat
-methane
-methane capture
+methane digester
 milk
-microfinance
 mixed farming
 mule
 mules
 mutton
 Newcastle disease
 nutrient cycling
-output
 overgrazing
 parasite control
 pastoral
+pastoral mobility
 pastoralist
 pasture
 pasture degradation
 pig
 pigs
-policy
 pork
 poultry
+precision livestock farming
+prebiotics
 processing
-production system
-productivity
+probiotics
 ram
 ranch
 rangeland
 rational grazing
-regenerative agriculture
 reproduction
 rooster
 roosters
@@ -152,33 +156,34 @@ rotational grazing
 ruminant
 ruminant nutrition
 selective breeding
+semen straws
 semi-intensive systems
 sheep
+silage
 silvopastoral
 slaughterhouse
 smallholder
 stallion
 stallions
+stockman
+stockwoman
 stocking density
-subsidy
-supplements
-sustainable intensification
 swine
+total mixed ration
 turkey
 turkeys
 vaccination
-value-added processing
-value chain
 vet
 veterinary
+veterinary services
 waste management
 water buffalo
 weaning
 whey
 women in livestock
 wool
-yield
 zero grazing
 zero-grazing
+zebu cattle
 zoonosis
-zoonotic 
+zoonotic

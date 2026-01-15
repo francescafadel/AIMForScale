@@ -269,7 +269,24 @@ def main():
         return
     
     csv_path = sys.argv[1]
-    keywords_file = "keywords.txt"
+    
+    # Look for keywords file in updated/ folder first, then config/, then current directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+    keywords_file = None
+    
+    for path in [
+        os.path.join(project_root, "updated", "keywords.txt"),
+        os.path.join(project_root, "config", "keywords.txt"),
+        "keywords.txt"
+    ]:
+        if os.path.exists(path):
+            keywords_file = path
+            break
+    
+    if not keywords_file:
+        print("Error: keywords.txt not found in updated/, config/, or current directory.")
+        return
     
     # Check if CSV file exists
     if not os.path.exists(csv_path):
