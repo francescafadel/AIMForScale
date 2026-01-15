@@ -1,0 +1,11 @@
+FIXED WORKING IDB DOWNLOAD ANALYSIS SUMMARY
+==================================================
+
+Total Projects Processed: 10
+Projects with Documents: 0
+Total Documents Found: 117
+Total Documents Downloaded: 0
+Success Rate: 0.0%
+
+Status Summary:
+  Download Failed: 10

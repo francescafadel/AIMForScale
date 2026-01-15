@@ -1,0 +1,81 @@
+IDB PROJECT DOCUMENT AVAILABILITY ANALYSIS
+==================================================
+
+SUMMARY STATISTICS:
+Total Projects Analyzed: 565
+
+COUNTRY DISTRIBUTION:
+  Regional: 174 projects
+  Peru: 121 projects
+  Headquarters: 114 projects
+  Colombia: 113 projects
+  Argentina: 113 projects
+  Honduras: 96 projects
+  Costa Rica: 84 projects
+  Chile: 82 projects
+  Uruguay: 77 projects
+  Ecuador: 75 projects
+  Dominican Republic: 73 projects
+  Nicaragua: 70 projects
+  Panama: 69 projects
+  Bolivia: 69 projects
+  Paraguay: 68 projects
+  Brazil: 55 projects
+  Guatemala: 51 projects
+  Haiti: 43 projects
+  Mexico: 37 projects
+  El Salvador: 35 projects
+
+PROJECT STATUS DISTRIBUTION:
+  ACTIVE: 253 projects
+  EXITED: 310 projects
+  Unknown: 2 projects
+
+PROJECT TYPE DISTRIBUTION:
+  Technical Cooperation: 400 projects
+  Loan Operation: 98 projects
+  Grant Financing Product: 5 projects
+  Equity: 11 projects
+  Externally Funded Contractuals: 1 projects
+  Investment Grants: 46 projects
+  Guarantee: 2 projects
+  Unknown: 2 projects
+
+LENDING TYPE DISTRIBUTION:
+  Sovereign Guaranteed: 317 projects
+  Non-Sovereign Guaranteed: 245 projects
+  Unknown: 3 projects
+
+APPROVAL YEAR DISTRIBUTION:
+  2015: 49 projects
+  2016: 52 projects
+  2017: 65 projects
+  2018: 55 projects
+  2019: 45 projects
+  2020: 57 projects
+  2021: 43 projects
+  2022: 53 projects
+  2023: 49 projects
+  2024: 68 projects
+  2025: 27 projects
+
+DOCUMENT AVAILABILITY ASSESSMENT:
+  High likelihood: 98 projects (17.3%)
+  Medium likelihood: 451 projects (79.8%)
+  Low likelihood: 16 projects (2.8%)
+  Unknown likelihood: 0 projects (0.0%)
+
+RECOMMENDATIONS:
+1. Focus on Loan Operations and Technical Cooperation projects first
+2. Prioritize projects with high total costs
+3. Check IDB's internal document repository (may require special access)
+4. Contact IDB directly for document access
+5. Consider using IDB's API if available
+6. Search IDB's publications database separately
+
+NEXT STEPS:
+1. Manual verification of document availability for high-priority projects
+2. Contact IDB information services for document access
+3. Search IDB's publications portal separately
+4. Consider filing information requests for specific projects
+5. Check if documents are available through partner organizations
