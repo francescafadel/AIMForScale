@@ -5,11 +5,10 @@ This document describes the reorganized structure of the World Bank Document Dow
 ## Directory Structure
 
 ```
-World Bank Documents/
+World Bank Documents PAD/PID/
 ├── wb_downloader.py          # Main Python application
 ├── README.md                  # Project documentation
 ├── requirements.txt           # Python dependencies
-├── .gitignore                 # Git ignore rules
 ├── CLEANUP_REPORT.md         # Cleanup documentation
 ├── PROJECT_ORGANIZATION.md   # This file
 │
@@ -39,7 +38,7 @@ World Bank Documents/
 
 ## Organization Principles
 
-1. **Code**: Main application files in root directory
+1. **Code**: Main application files in this directory
 2. **Data**: All input CSV files in `data/` directory
 3. **Test Runs**: All test files and test results in `test_runs/` directory
 4. **Results**: All download results consolidated in `results/full_downloads/`
@@ -47,8 +46,8 @@ World Bank Documents/
 
 ## What's Ignored by Git
 
-- `results/full_downloads/` - Large download directories (can be regenerated)
-- `test_runs/` - Test files and test results
+- `World Bank Documents PAD/PID/results/full_downloads/` - Large download directories (can be regenerated)
+- `World Bank Documents PAD/PID/test_runs/` - Test files and test results
 - System files (`.DS_Store`, etc.)
 - Python cache files
 
