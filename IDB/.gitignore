@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Downloads (large files - exclude from git)
+downloads/
+*.pdf
+*.PDF
+*.docx
+*.DOCX
+
+# Data files (may contain sensitive info)
+data/*.csv
+data/*.xlsx
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test files
+test_downloads/
+*.html
+
+# Temporary files
+*.tmp
+*.bak
+
