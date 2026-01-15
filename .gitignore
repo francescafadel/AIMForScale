@@ -47,6 +47,17 @@ venv.bak/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Downloads (large files - exclude from git)
+IDB/downloads/
+*.pdf
+*.PDF
+*.docx
+*.DOCX
+
+# Data files (may contain sensitive info)
+IDB/data/*.csv
+IDB/data/*.xlsx
+
 # Large data directories (can be regenerated)
 World Bank Documents PAD/PID/results/full_downloads/
 World Bank Documents PAD/PID/test_runs/
@@ -63,11 +74,14 @@ test_subset.csv
 # Logs
 *.log
 
-# OS generated files
-.DS_Store
+# Test files
+test_downloads/
+*.html
+
+# Temporary files
+*.tmp
+*.bak
+
+# OS generated files (duplicate prevention)
 .DS_Store?
 ._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
