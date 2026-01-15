@@ -50,6 +50,7 @@ venv.bak/
 # Large data directories (can be regenerated)
 World Bank Documents PAD/PID/results/full_downloads/
 World Bank Documents PAD/PID/test_runs/
+# Note: PAD/PID/ directory is tracked to show organized documents by country
 
 # Temporary test files
 test_*.csv
