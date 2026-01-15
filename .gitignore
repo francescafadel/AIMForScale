@@ -48,9 +48,8 @@ venv.bak/
 .ipynb_checkpoints
 
 # Large data directories (can be regenerated)
-full_downloads/
-full_downloads_pt2/
-test_downloads_real/
+results/full_downloads/
+test_runs/
 
 # Temporary test files
 test_*.csv
