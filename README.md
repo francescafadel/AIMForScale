@@ -1,4 +1,4 @@
-# AIMForScale
+# AIMForScale Word Search
 
 A comprehensive Python tool for extracting and analyzing livestock-related keywords from PDF documents and CSV files from various International Financial Institutions (IFIs), including World Bank, African Development Bank (AfDB), and Inter-American Development Bank (IDB) projects.
 
