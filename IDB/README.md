@@ -5,9 +5,14 @@ Automated downloader for Inter-American Development Bank (IDB) project documents
 ## 📋 Overview
 
 This project downloads three specific types of English documents from IDB project pages:
-- **Loan Proposal Documents**
-- **Project Proposal Documents**
-- **Project Abstract Documents**
+- **Loan Proposal Documents** - Documents containing "loan", "proposal", or "loan proposal" in the title
+- **Project Proposal Documents** - Documents containing "project proposal" or "proposal document" in the title
+- **Project Abstract Documents** - Documents containing "abstract", "synthesis", or "tc abstract" in the title
+
+### Key Criteria:
+- ✅ **Language**: Only English documents are downloaded (Spanish documents are identified but skipped)
+- ✅ **Accessibility**: Only publicly accessible documents are downloaded (no authentication required)
+- ✅ **Coverage**: All 565 projects in the dataset are processed
 
 ## 🚀 Quick Start
 
@@ -65,7 +70,8 @@ python analysis/analyze_download_results.py
 │   ├── IDB Corpus Key Words.csv
 │   └── ssl_fixed_document_tracking.csv
 ├── docs/                         # Documentation
-├── downloads/                    # Downloaded documents (by country)
+├── IDB documents/                # Downloaded documents organized by country
+├── downloads/                    # Original download location (legacy)
 ├── unsuccessful_attempts/        # Previous failed attempts (archived)
 ├── requirements.txt
 └── README.md
@@ -113,10 +119,11 @@ Only English documents are downloaded. Spanish documents are identified but skip
 
 ## 📝 Notes
 
-- Documents are organized by country in the `downloads/` folder
+- Documents are organized by country in the `IDB documents/` folder
 - The tracking CSV provides detailed information about which projects have which document types
-- Some documents may be categorized as "Unknown" country due to incomplete country code mapping
+- All documents from the "Unknown" folder were identified by country code and properly categorized
 - All downloads are publicly accessible documents only
+- Documents are organized by country, with all document types (Loan Proposal, Project Proposal, Project Abstract) in each country folder
 
 ## ⚠️ Important
 
