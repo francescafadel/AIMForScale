@@ -11,6 +11,11 @@ ENV/
 
 # Downloads (large files - exclude from git)
 downloads/
+# Allow PDFs in IDB documents folder
+!IDB documents/**/*.pdf
+!IDB documents/**/*.PDF
+!IDB documents/**/*.docx
+!IDB documents/**/*.DOCX
 *.pdf
 *.PDF
 *.docx
