@@ -1,0 +1,45 @@
+I have a CSV file (~1,000 rows) with columns like:
+project_id
+country
+type (values include: objective, intervention, outcome)
+category (may contain multiple categories in one cell separated by commas and/or semicolons, e.g. "crop management, technology & R&D" or "Policy & Regulatory; Environmental Sustainability")
+
+Goal:
+Create TWO separate pivot tables (presence/absence only):
+  1.) interventions pivot
+  2.) outcomes pivot
+
+Requirements:
+  1.) Load input.csv into pandas.
+  2.) Filter OUT rows where type is "objective" (objectives have no usable category).
+  3.) Clean and normalize the category field:
+      - treat both , and ; as delimiters
+      - split into multiple categories
+      - trim whitespace
+      - drop empty category values
+  4.) Expand (explode) so each project–category pairing is its own row.
+  5.) Create a project label column with this exact logic:
+      - If a project_id is associated with exactly one unique country → label as PROJECT_ID (Country)
+      - If a project_id is associated with more than one unique country → label as PROJECT_ID (multiple)
+  6.) For each of the two datasets (intervention and outcome), build a pivot table where:
+      - Rows = the project label created above
+      - Columns = each unique individual category
+      - Values = 0/1 presence (1 if that category appears at least once for that project, else 0, not counts)
+
+  7.) Fill all missing values with 0 and ensure the table contains only integers (0 or 1).
+  8.) Export:
+      - intervention_category_pivot.csv
+      - outcome_category_pivot.csv
+  9.) Also export a QA file category_dictionary.csv containing:
+      - each unique cleaned category
+      - total number of exploded rows it appears in
+  10.) Add basic QA prints:
+      - number of input rows
+      - number of rows after filtering objectives
+      - number of rows after exploding categories
+      - number of unique projects in interventions and outcomes
+      - number of unique categories total
+  11.) Write clean, well-commented code in a single script file (e.g., make_pivots.py) and include a main() so I can run:
+python make_pivots.py
+
+Assume the input file is named input.csv in the same folder as the script.
