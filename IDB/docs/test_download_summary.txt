@@ -1,0 +1,12 @@
+TEST ADVANCED IDB DOWNLOAD ANALYSIS SUMMARY
+==================================================
+
+Total Projects Processed: 10
+Projects with Documents Downloaded: 0
+Total Documents Found: 0
+Total Documents Downloaded: 0
+Success Rate: 0.0%
+Document Download Success Rate: N/A
+
+Status Summary:
+  No Documents Found: 10

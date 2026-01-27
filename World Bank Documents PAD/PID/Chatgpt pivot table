@@ -1,0 +1,171 @@
+You are a data processing assistant.
+
+I have a CSV file (~1,000 rows) with columns like:
+
+project_id
+
+country
+
+type (values include: objective, intervention, outcome)
+
+category (may contain multiple categories in one cell separated by commas and/or semicolons, e.g. "crop management, technology & R&D" or "Policy & Regulatory; Environmental Sustainability")
+
+Some outcome rows also contain hierarchical outcome labels, where a primary outcome category has a more specific sub-category (e.g., "Animal Health: Vaccination" or "Market Access - Cold Chains").
+
+Goal
+
+Create:
+
+one intervention pivot table
+
+two outcome pivot tables (Option A):
+
+primary outcome categories only
+
+primary to sub-category outcomes
+
+All pivots must be binary presence (0/1), not counts.
+
+Requirements
+
+Load and filter
+
+Load input.csv into pandas.
+
+Filter out all rows where type == "objective".
+
+Category cleaning and splitting
+For all remaining rows:
+
+Standardize separators so that both , and ; are treated as delimiters.
+
+Split into multiple categories if present.
+
+Trim whitespace.
+
+Drop empty category values.
+
+After this step, explode the DataFrame so each row contains only one category value.
+
+Outcome hierarchy parsing (outcomes only)
+For rows where type == "outcome":
+
+Create:
+
+primary_category
+
+subcategory
+
+If a hierarchical separator exists (" - ", ":", or " > "):
+
+Everything before the separator is primary_category
+
+Everything after is subcategory
+
+If no separator exists:
+
+Treat the full value as primary_category
+
+Leave subcategory blank.
+
+Intervention rows do not require subcategory parsing.
+
+Project label logic
+Create a project label with this rule:
+
+If a project_id is associated with exactly one unique country:
+→ PROJECT_ID (Country)
+
+If a project_id is associated with more than one country:
+→ PROJECT_ID (multiple)
+
+Use this label as the row identifier in all pivots.
+
+Pivot tables
+
+A. Intervention pivot
+From intervention rows only:
+
+Rows = project label
+
+Columns = each unique cleaned category
+
+Values = 0/1 presence per project
+
+Ensure values are binary, not counts
+
+Fill missing with 0
+
+Export as:
+intervention_category_pivot.csv
+
+B. Outcome primary-category pivot
+From outcome rows:
+
+Rows = project label
+
+Columns = unique primary_category values
+
+Values = 0/1 presence
+
+Fill missing with 0
+
+Export as:
+outcome_primary_category_pivot.csv
+
+C. Outcome primary to sub-category pivot
+From outcome rows where subcategory is not empty:
+
+Create a combined column label:
+Primary::Subcategory
+
+Rows = project label
+
+Columns = each unique Primary::Subcategory
+
+Values = 0/1 presence
+
+Fill missing with 0
+
+Export as:
+outcome_primary_subcategory_pivot.csv
+
+QA outputs
+Also generate category_dictionary.csv containing:
+
+each unique cleaned category
+
+how many exploded rows it appears in
+
+Print to console:
+
+number of input rows
+
+number after filtering objectives
+
+number after exploding categories
+
+number of unique projects total
+
+number of intervention projects
+
+number of outcome projects
+
+number of unique categories
+
+number of unique primary outcome categories
+
+number of unique outcome subcategories
+
+Code expectations
+
+Write clean, well-commented Python code using pandas.
+
+Put everything in a single script (e.g., make_pivots.py).
+
+Include a main() function.
+
+Script should run with:
+python make_pivots.py
+
+Assume the file is named input.csv and is in the same directory.
