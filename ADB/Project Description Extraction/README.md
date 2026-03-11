@@ -16,7 +16,8 @@ Automated tool to extract project descriptions from Asian Development Bank (ADB)
 ```
 ADB/Project Description Extraction/
 ├── scripts/
-│   ├── adb_description_extractor.py  # Main extraction script
+│   ├── adb_description_extractor.py  # Main extraction script (Path-based paths)
+│   ├── extract_descriptions_test_3_fixed.py  # Same logic, paths for data/
 │   └── scrape_adb_descriptions.py   # Alternative scraper
 ├── tests/
 │   ├── extract_descriptions_test_5.py
@@ -32,7 +33,13 @@ ADB/Project Description Extraction/
 ├── utils/
 │   └── add_description_column_header.py
 ├── requirements.txt
-└── README.md
+├── README.md
+├── PROJECT_README.md          # Original project README
+├── push_adb_to_github.py      # Copy this folder into AIMForScale repo
+├── DIAGNOSE_AND_PUSH.py       # Diagnose paths + copy + git status
+├── setup_repo.py              # Organize files into this structure
+├── HOW_TO_PUSH_TO_GITHUB.md   # Instructions to push to GitHub
+└── COPY_PASTE_COMMANDS.txt    # Terminal commands (no Python)
 ```
 
 ## Installation

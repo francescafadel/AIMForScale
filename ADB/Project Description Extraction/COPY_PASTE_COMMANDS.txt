@@ -1,0 +1,46 @@
+# Copy-paste these commands in Terminal (one block at a time)
+
+# --- STEP 1: Go to your home directory and clone AIMForScale if you don't have it ---
+cd ~/Desktop
+# If you already have AIMForScale, skip the next line. Otherwise run:
+git clone https://github.com/francescafadel/AIMForScale.git
+
+# --- STEP 2: Copy the ADB content into AIMForScale (exact paths for your Mac) ---
+# This copies the inner ADB folder *contents* into AIMForScale/ADB/
+AIM="$HOME/Desktop/AIMForScale"
+SRC="$HOME/Desktop/ADB Project Description Extraction/ADB"
+
+# Create ADB inside AIMForScale if needed
+mkdir -p "$AIM/ADB"
+
+# Copy README and CONTENTS into AIMForScale/ADB/
+cp "$SRC/README.md" "$AIM/ADB/"
+cp "$SRC/CONTENTS.md" "$AIM/ADB/"
+
+# Copy the whole "Project Description Extraction" folder (this is what's missing on GitHub)
+rm -rf "$AIM/ADB/Project Description Extraction"
+cp -R "$SRC/Project Description Extraction" "$AIM/ADB/"
+
+# Optional: copy ADB Links README (your 3 files already on GitHub stay)
+mkdir -p "$AIM/ADB/ADB Links"
+cp "$SRC/ADB Links/README.md" "$AIM/ADB/ADB Links/" 2>/dev/null || true
+
+# --- STEP 3: Check that the copy worked ---
+echo "You should see Project Description Extraction below:"
+ls -la "$AIM/ADB/"
+ls -la "$AIM/ADB/Project Description Extraction/"
+
+# --- STEP 4: Add, commit, push from AIMForScale ---
+cd "$AIM"
+git add ADB/
+git status
+
+# You MUST see new/modified files under ADB (e.g. "ADB/README.md", "ADB/Project Description Extraction/..."). 
+# If git status shows nothing under ADB, the copy didn't work or you're in the wrong folder.
+
+git commit -m "Add ADB Project Description Extraction: scripts, tests, data, docs"
+git push origin main
+
+# --- If AIMForScale is NOT on Desktop ---
+# Replace the line above that sets AIM= with your real path, e.g.:
+# AIM="$HOME/Documents/AIMForScale"
