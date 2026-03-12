@@ -120,30 +120,6 @@ python keyword-search/scripts/csv_keyword_scanner.py
 
 4. Find the results in `keyword-search/data/processed/`.
 
-### Downloading World Bank Documents
-
-```bash
-python "World Bank Documents PAD/PID/wb_downloader.py"
-```
-
-Documents are saved into country-level folders under `World Bank Documents PAD/PID/PAD/PID/`.
-
-### Downloading IDB Documents
-
-```bash
-python IDB/src/ssl_fixed_document_downloader.py
-```
-
-Documents are saved into country-level folders under `IDB/IDB documents/`.
-
-### Generating Pivot Tables (World Bank)
-
-```bash
-python "World Bank Documents PAD/PID/Pivot Tables/make_pivots.py"
-```
-
-Output CSVs are written to the `Pivot Tables/` folder.
-
 ---
 
 ## Language
