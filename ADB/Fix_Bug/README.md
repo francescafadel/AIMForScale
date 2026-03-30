@@ -1,32 +1,46 @@
-# Fix_Bug
+# ADB Project Description Scraper -- Fix_Bug
 
-This folder contains copies of the documents your coder should use to debug and fix the ADB description extraction scraper. Files are organized by type and labeled below.
+Extracts project descriptions from ADB project pages and writes them into a CSV file.
 
-## Must read / use
+---
 
-| File | Purpose |
-|------|---------|
-| `data/Final ADB Corpus - Sheet1_with_urls.csv` | CSV with Project IDs, Project Link column (hyperlinks to ADB project pages), and Description column to fill. |
-| `scripts/adb_description_extractor.py` | Main Playwright script: navigates to each link, opens Project Data Sheet, extracts Description. |
-| `docs/ISSUES_ANALYSIS.md` | Documented issues (Cloudflare, tab click, selectors, timing) and proposed fixes. |
+## Files
 
-## Strongly recommended
+| File | Description |
+|------|-------------|
+| `csv_cleaner.py` | Removes duplicate rows from the original corpus. Run this once before scraping (done already so DO NOT run it again -- overwrites the descriptions). |
+| `test_single_url.py` | Tests a single URL to confirm your API key and extraction logic work. |
+| `adb_scrapper_with_scrapperAPI.py` | Main scraper. Fetches descriptions for all projects in the CSV. |
 
-| File | Purpose |
-|------|---------|
-| `docs/TEST_RESULTS.md` | Test run outcomes, success rates, and sample failed URLs. |
-| `scripts/scrape_adb_descriptions.py` | Alternative scraper implementation (pandas-based). |
-| `tests/test_single_url.py` | Single-URL test script for quick debugging. |
-| `docs/USAGE.md` | How to run the extractor and tests. |
-| `requirements.txt` | Python dependencies (pandas, playwright). |
+---
 
-## Folder layout
+## Setup
 
-- `data/` – Input CSV with project links.
-- `scripts/` – Main and alternative extraction scripts.
-- `docs/` – Issues, test results, and usage.
-- `tests/` – Single-URL test script.
+**1. Install dependencies:**
+```bash
+pip install requests beautifulsoup4
+```
 
-Run scripts from the `Fix_Bug` directory (or set paths as needed). See `docs/USAGE.md` for commands.
+**2. Update the CSV path** in `adb_scrapper_with_scrapperAPI.py`:
+```python
+CSV_FILE = Path("/your/path/to/Final ADB Corpus - Unique.csv")
+```
 
-The copy of `adb_description_extractor.py` in `scripts/` is already configured to read and write the CSV in `data/Final ADB Corpus - Sheet1_with_urls.csv`. Header detection works for both "Project ID" in the first column and for CSVs where "Project Link" appears in the first row (e.g. Sheet1_with_urls); in the latter case the first row is treated as the header, so the very first data row in that file is not processed.
+**3. Add your ScraperAPI key** (get one free at [scraperapi.com](https://www.scraperapi.com)):
+```python
+API_KEY = "your_api_key_here"
+```
+
+---
+
+## How to Run
+
+```bash
+# 1. Test on 5 projects first
+python adb_scrapper_with_scrapperAPI.py --test 5
+
+# 2. Full run
+python adb_scrapper_with_scrapperAPI.py
+```
+
+The script skips rows that already have a description and saves after every row — safe to stop and restart anytime.

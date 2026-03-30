@@ -1,48 +1,53 @@
 """
-Quick test to extract description from a single URL
+Quick single URL test using ScraperAPI -- this one uses the meta tag -- description lies in the <dd></dd> description tag. (updated full working code under adb_scrapper_with_scrapperAPI.py)
 """
-import asyncio
-from playwright.async_api import async_playwright
 
-async def test_extract():
-    url = "https://www.adb.org/projects/29600-013/main"
-    
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)  # Show browser for debugging
-        context = await browser.new_context()
-        page = await context.new_page()
-        
-        try:
-            print(f"Navigating to {url}")
-            await page.goto(url, timeout=60000)
-            await page.wait_for_timeout(3000)
-            
-            # Try to click Project Data Sheet
-            try:
-                await page.click('text="Project Data Sheet"')
-                print("Clicked Project Data Sheet")
-                await page.wait_for_timeout(3000)
-            except:
-                print("Could not click Project Data Sheet")
-            
-            # Try to find description
-            try:
-                rows = await page.query_selector_all('tr')
-                for row in rows:
-                    cells = await row.query_selector_all('td, th')
-                    if len(cells) >= 2:
-                        first_text = await cells[0].inner_text()
-                        if first_text and 'description' in first_text.lower():
-                            desc = await cells[1].inner_text()
-                            print(f"Found description: {desc[:200]}...")
-                            break
-            except Exception as e:
-                print(f"Error: {e}")
-            
-            await page.wait_for_timeout(5000)  # Keep browser open for inspection
-        finally:
-            await browser.close()
+import requests
+from bs4 import BeautifulSoup
+
+API_KEY     = "4ce855c35a657eb52b13db560d24d56c"
+PROJECT_URL = "https://www.adb.org/projects/48409-001/main"
+
+def fetch_description(url):
+    print(f"Fetching: {url}\n")
+
+    # Build URL directly instead of using params dict
+    scraper_url = f"http://api.scraperapi.com?api_key={API_KEY}&url={url}&render=false"
+
+    resp = requests.get(scraper_url, timeout=60)
+
+    print(f"Status code: {resp.status_code}")
+
+    if not resp.ok:
+        print(f"Failed — HTTP {resp.status_code}")
+        print(resp.text[:200])
+        return
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+
+    # Strategy 1: meta tag
+    meta = soup.find("meta", attrs={"name": "description"})
+    if meta and meta.get("content", "").strip():
+        print(f"\n✓ Found via meta tag:")
+        print("-" * 60)
+        print(meta["content"].strip())
+        print("-" * 60)
+        return
+
+    # Strategy 2: dt/dd
+    for dt in soup.find_all("dt"):
+        if dt.get_text(strip=True).lower() == "description":
+            dd = dt.find_next_sibling("dd")
+            if dd:
+                text = " ".join(dd.get_text(" ", strip=True).split())
+                if len(text) > 30:
+                    print(f"\n✓ Found via dt/dd:")
+                    print("-" * 60)
+                    print(text)
+                    print("-" * 60)
+                    return
+
+    print("✗ No description found in the page")
 
 if __name__ == "__main__":
-    asyncio.run(test_extract())
-
+    fetch_description(PROJECT_URL)
