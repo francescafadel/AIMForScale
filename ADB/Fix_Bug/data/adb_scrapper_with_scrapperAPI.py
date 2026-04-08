@@ -19,8 +19,8 @@ from bs4 import BeautifulSoup
 
 # ── Settings ──────────────────────────────────────────────────────────────────
 
-CSV_FILE        = Path("/Users/bipu/Desktop/AIMForScale/ADB/Fix_Bug/data/Final ADB Corpus - Unique.csv")
-API_KEY         = "API_KEY_HERE"
+CSV_FILE        = Path("/Users/francesca/Desktop/AIMForScale/ADB/Fix_Bug/data/Final ADB Corpus - Unique.csv")
+API_KEY         = "ee48012eab0863c9c7d54f036972c5a8"
 
 DELAY_SECONDS   = (1.0, 2.5)
 REQUEST_TIMEOUT = 60
