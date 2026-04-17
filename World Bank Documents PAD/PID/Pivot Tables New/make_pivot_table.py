@@ -126,7 +126,8 @@ def build_pivot(df, item_type, categories, aliases, all_projects):
             continue
         for cat in map_cats(row['primary_category'], aliases):
             pivot.loc[pid, cat] = 1
-
+    # Add Total row
+    pivot.loc['TOTAL'] = pivot.sum()
     return pivot
 
 
