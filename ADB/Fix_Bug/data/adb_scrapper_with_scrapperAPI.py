@@ -20,11 +20,11 @@ from bs4 import BeautifulSoup
 # ── Settings ──────────────────────────────────────────────────────────────────
 
 CSV_FILE        = Path("/Users/francesca/Desktop/AIMForScale/ADB/Fix_Bug/data/Final ADB Corpus - Unique.csv")
-API_KEY         = "ee48012eab0863c9c7d54f036972c5a8"
+API_KEY         = "YOUR_NEW_API_KEY_HERE"  # Get from https://www.scraperapi.com/
 
 DELAY_SECONDS   = (1.0, 2.5)
 REQUEST_TIMEOUT = 60
-MAX_RETRIES     = 3
+MAX_RETRIES     = 2
 
 
 # ── Fetch one project description ─────────────────────────────────────────────
@@ -72,7 +72,6 @@ def fetch_description(session, project_url):
             print(f"    ✗ Timeout (attempt {attempt}/{MAX_RETRIES})")
         except Exception as e:
             print(f"    ✗ Error: {str(e)[:80]}")
-            return ""
 
         if attempt < MAX_RETRIES:
             time.sleep(5 * attempt)
@@ -100,7 +99,25 @@ def find_col(header, name):
     for i, c in enumerate(header):
         if c.strip() == name:
             return i
-    raise ValueError(f"Column '{name}' not found.")
+    return None  # Return None instead of raising error
+
+
+def ensure_column(rows, header_idx, header, col_name):
+    """Add column to header and all rows if it doesn't exist."""
+    col_idx = find_col(header, col_name)
+    if col_idx is not None:
+        return col_idx
+    
+    # Add to header
+    rows[header_idx].append(col_name)
+    col_idx = len(rows[header_idx]) - 1
+    
+    # Add empty values to all data rows
+    for row in rows[header_idx + 1:]:
+        while len(row) <= col_idx:
+            row.append("")
+    
+    return col_idx
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -115,6 +132,7 @@ def main(test_size=None):
     header     = rows[header_idx]
     link_col   = find_col(header, "Project Link")
     desc_col   = find_col(header, "Description")
+    visited_col = ensure_column(rows, header_idx, header, "link_visited_already")
 
     # Collect unique projects that still need a description
     seen_ids   = set()
@@ -130,9 +148,9 @@ def main(test_size=None):
         url = row[link_col].strip()
         pid = row[0].strip() if row else ""
 
-        # Skip already filled
-        existing = row[desc_col].strip() if len(row) > desc_col else ""
-        if existing:
+        # Skip if already visited (regardless of whether description exists)
+        visited = row[visited_col].strip().lower() if len(row) > visited_col else ""
+        if visited == "true":
             continue
 
         # Skip duplicates
@@ -158,10 +176,17 @@ def main(test_size=None):
             rows[row_idx].append("")
         rows[row_idx][desc_col] = desc
 
+        # Mark link as visited REGARDLESS of success — all 3 attempts are done
+        while len(rows[row_idx]) <= visited_col:
+            rows[row_idx].append("")
+        rows[row_idx][visited_col] = "TRUE"
+
         if desc:
             succeeded += 1
             preview = desc[:150] + ("..." if len(desc) > 150 else "")
             print(f"    ✓ ({len(desc)} chars) {preview}")
+        else:
+            print(f"    ⊘ No description found after {MAX_RETRIES} attempts")
 
         # Save after every row — never lose progress
         save_csv(rows, CSV_FILE)
